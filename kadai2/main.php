@@ -46,8 +46,6 @@ $youtube = new YouTube();
 $date = date('Y-m-d\TH:i:s\Z', strtotime('-3 day', time()));
 $videos = $youtube->fetchVideos($date);
 
-count($videos);
 foreach ($videos as $video) {
     echo $video["snippet"]["title"] . ":" . "https://www.youtube.com/watch?v=" . $video["id"]["videoId"] . "\n";
-    // echo $video["snippet"]["tags"] . "\n";
 }
